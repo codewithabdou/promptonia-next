@@ -141,11 +141,11 @@
 }
 
 .dropdown {
-  @apply absolute right-0 top-full mt-3 w-full p-5 rounded-lg bg-white min-w-[210px] flex flex-col gap-2 justify-end items-end;
+  @apply absolute border-b-2 border-b-orange-300 flex-center right-0 top-full mt-3 w-full p-5 rounded-lg bg-white min-w-[210px] flex flex-col gap-2 justify-end items-end;
 }
 
 .dropdown_link {
-  @apply text-sm font-inter text-gray-700 hover:text-gray-500 font-medium;
+  @apply relative text-sm font-inter text-gray-700 hover:text-gray-500 font-medium transition duration-300 hover:-translate-y-1 after:absolute after:bottom-0 after:bg-orange-500 flex-center after:h-[1px] after:transition after:duration-300 after:w-[80%] after:scale-x-0 hover:after:scale-x-100;
 }
 
 /* PromptCard Component */
