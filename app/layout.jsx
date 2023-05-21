@@ -4,11 +4,14 @@ import { Nav } from "@components";
 import userContext from "@context/userContext";
 import { useEffect, useState } from "react";
 import useAuth from "@utils/auth/useAuth";
-
+import Head from "next/head";
 
 export const metadata = {
   title: "Promptonia",
   description: "Discover & share new AI prompts",
+  icons: {
+    icon: "/assets/images/logo.svg",
+  },
 };
 
 export default function RootLayout({ children }) {
@@ -21,6 +24,26 @@ export default function RootLayout({ children }) {
 
   return (
     <html lang="en">
+      <Head>
+        <link rel="shortcut icon" href="/assets/images/logo.svg" />
+        <link
+          rel="apple-touch-icon"
+          sizes="180x180"
+          href="/assets/images/logo.svg"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="32x32"
+          href="/assets/images/logo.svg"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="16x16"
+          href="/assets/images/logo.svg"
+        />
+      </Head>
       <body>
         <userContext.Provider value={{ user, setUser }}>
           <div className="main">
