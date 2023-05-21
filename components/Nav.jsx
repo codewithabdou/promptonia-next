@@ -7,8 +7,8 @@ import userContext from "@context/userContext";
 import useAuth from "@utils/auth/useAuth";
 
 const Nav = () => {
-  const {user,setUser}=useContext(userContext)
-  const {SignIn,SignOut}=useAuth({user,setUser})
+  const { user, setUser } = useContext(userContext);
+  const { SignIn, SignOut } = useAuth({ user, setUser });
 
   const [toggleDropdown, setToggleDropdown] = useState(false);
 
@@ -22,7 +22,7 @@ const Nav = () => {
           height={30}
           className="object-contain"
         />
-        <p className="logo_text">Promptopia</p>
+        <p className="logo_text">Promptonia</p>
       </Link>
 
       {/* Desktop Navigation */}
@@ -32,10 +32,15 @@ const Nav = () => {
             <Link href="/create-prompt" className="black_btn">
               Create Post
             </Link>
-
-            <button type="button" onClick={()=>{SignOut()}} className="outline_btn">
-              Sign Out
-            </button>
+              <button
+                type="button"
+                onClick={() => {
+                  SignOut();
+                }}
+                className="outline_btn"
+              >
+                Sign Out
+              </button>
 
             <Link href="/profile">
               <Image
@@ -49,7 +54,13 @@ const Nav = () => {
           </div>
         ) : (
           <>
-            <button type="button" onClick={()=>{SignIn()}} className="black_btn">
+            <button
+              type="button"
+              onClick={() => {
+                SignIn();
+              }}
+              className="black_btn"
+            >
               Sign in
             </button>
           </>
@@ -85,22 +96,28 @@ const Nav = () => {
                 >
                   Create Prompt
                 </Link>
-                <button
-                  type="button"
-                  onClick={() => {
-                    setToggleDropdown(false);
-                    SignOut();
-                  }}
-                  className="mt-5 w-full black_btn"
-                >
-                  Sign Out
-                </button>
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setToggleDropdown(false);
+                      SignOut();
+                    }}
+                    className="mt-5 w-full black_btn"
+                  >
+                    Sign Out
+                  </button>
               </div>
             )}
           </div>
         ) : (
           <>
-            <button type="button" onClick={()=>{SignIn()}} className="black_btn">
+            <button
+              type="button"
+              onClick={() => {
+                SignIn();
+              }}
+              className="black_btn"
+            >
               Sign in
             </button>
           </>
