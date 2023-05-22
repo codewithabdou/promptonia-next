@@ -6,13 +6,7 @@ import { useEffect, useState } from "react";
 import useAuth from "@utils/auth/useAuth";
 import Head from "next/head";
 
-export const metadata = {
-  title: "Promptonia",
-  description: "Discover & share new AI prompts",
-  icons: {
-    icon: "/assets/images/logo.svg",
-  },
-};
+
 
 export default function RootLayout({ children }) {
   const [user, setUser] = useState(null);
@@ -25,6 +19,8 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <Head>
+        <title>Promptonia</title>
+        <desc>Discover & share new AI prompts</desc>
         <link rel="shortcut icon" href="/assets/images/logo.svg" />
         <link
           rel="apple-touch-icon"
